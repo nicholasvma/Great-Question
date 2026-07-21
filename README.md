@@ -1,0 +1,115 @@
+# Great-Question
+<!DOCTYPE html>
+<html>
+<head>
+<title>Will You Go On A Date With Me?</title>
+
+<style>
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff5f7;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 40px;
+    color: #ff4d6d;
+}
+
+p {
+    font-size: 20px;
+}
+
+button {
+    padding: 15px 35px;
+    font-size: 20px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    margin: 20px;
+}
+
+#yes {
+    background: #4CAF50;
+    color: white;
+    transition: 0.2s;
+}
+
+#no {
+    background: #ff4d6d;
+    color: white;
+    position: absolute;
+}
+
+#message {
+    display: none;
+    font-size: 35px;
+    color: #ff4d6d;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Will you go on a date with me? 😊</h1>
+
+<p>Choose wisely...</p>
+
+<button id="yes">Yes ❤️</button>
+<button id="no">No 😢</button>
+
+<h2 id="message">
+YAY!! 🎉<br>
+I knew you'd say yes ❤️
+</h2>
+
+</div>
+
+
+<script>
+
+const no = document.getElementById("no");
+const yes = document.getElementById("yes");
+const message = document.getElementById("message");
+
+let yesSize = 20;
+
+no.addEventListener("mouseover", function(){
+
+    let x = Math.random() * (window.innerWidth - 100);
+    let y = Math.random() * (window.innerHeight - 50);
+
+    no.style.left = x + "px";
+    no.style.top = y + "px";
+
+    yesSize += 5;
+    yes.style.fontSize = yesSize + "px";
+});
+
+
+yes.addEventListener("click", function(){
+
+    document.querySelector("h1").style.display = "none";
+    document.querySelector("p").style.display = "none";
+    yes.style.display = "none";
+    no.style.display = "none";
+
+    message.style.display = "block";
+
+});
+
+</script>
+
+</body>
+</html>
