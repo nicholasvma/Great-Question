@@ -51,9 +51,10 @@ button {
 
 #message {
     display: none;
-    font-size: 35px;
+    font-size: 30px;
     color: #ff4d6d;
 }
+
 </style>
 </head>
 
@@ -65,12 +66,13 @@ button {
 
 <p>Choose wisely...</p>
 
-<button id="yes">Yes ❤️</button>
+<button id="yes">Yes 😛</button>
 <button id="no">No 😢</button>
 
 <h2 id="message">
 YAY!! 🎉<br>
-I knew you'd say yes ❤️
+I knew you'd say yes 😛<br>
+Haha get it, because now I can help you in the future 😳
 </h2>
 
 </div>
@@ -84,17 +86,23 @@ const message = document.getElementById("message");
 
 let yesSize = 20;
 
-no.addEventListener("mouseover", function(){
+function moveNoButton() {
 
-    let x = Math.random() * (window.innerWidth - 100);
-    let y = Math.random() * (window.innerHeight - 50);
+    let x = Math.random() * (window.innerWidth - 120);
+    let y = Math.random() * (window.innerHeight - 60);
 
     no.style.left = x + "px";
     no.style.top = y + "px";
 
     yesSize += 5;
     yes.style.fontSize = yesSize + "px";
-});
+}
+
+// Computer users
+no.addEventListener("mouseover", moveNoButton);
+
+// Phone users
+no.addEventListener("touchstart", moveNoButton);
 
 
 yes.addEventListener("click", function(){
