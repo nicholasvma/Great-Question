@@ -63,7 +63,7 @@ button {
     margin-top: 20px;
 }
 
-/* Flower explosion */
+/* Flower burst animation */
 .flower {
     position: fixed;
     font-size: 35px;
@@ -97,15 +97,17 @@ button {
 <button id="yes">Yes 😛</button>
 <button id="no">No 😢</button>
 
+
 <h2 id="message">
 YAY!! 🎉<br>
 Thank youuuu b 😛<br><br>
 Haha get it, because now I can help you in the future 😳
-<br>
+<br><br>
 
 <img class="cat" src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="cute cat">
 
 </h2>
+
 
 </div>
 
@@ -119,7 +121,7 @@ const message = document.getElementById("message");
 let yesSize = 20;
 
 
-// Make No button run away
+// No button runs away
 function moveNoButton() {
 
     let x = Math.random() * (window.innerWidth - 120);
@@ -131,6 +133,7 @@ function moveNoButton() {
     yesSize += 5;
     yes.style.fontSize = yesSize + "px";
 }
+
 
 no.addEventListener("mouseover", moveNoButton);
 
@@ -155,11 +158,13 @@ function flowerBurst() {
         flower.style.left = "50%";
         flower.style.top = "50%";
 
-        flower.style.setProperty("--x",
+        flower.style.setProperty(
+            "--x",
             (Math.random()*600 - 300) + "px"
         );
 
-        flower.style.setProperty("--y",
+        flower.style.setProperty(
+            "--y",
             (Math.random()*600 - 300) + "px"
         );
 
@@ -167,14 +172,14 @@ function flowerBurst() {
 
         setTimeout(() => {
             flower.remove();
-        },1500);
+        }, 1500);
 
     }
 
 }
 
 
-// Yes button
+// Yes button clicked
 yes.addEventListener("click", function(){
 
     document.querySelector("h1").style.display = "none";
